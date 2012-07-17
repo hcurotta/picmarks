@@ -1,9 +1,10 @@
 <h1>Picture Details</h1>
 
 <div>
-  <img width="200" src="<%= @url %>"/>
-  <p><%= @note %></p>
+  <img src="<%= @picture.url %>"/>
+  <p><%= @picture.note %></p>
 </div>
 
+<a href="/pictures/delete/<%= @picture.id %>/">Delete</a>
 <a href="/pictures">Back</a>
 

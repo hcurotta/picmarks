@@ -8,22 +8,36 @@ class PicturesController < ApplicationController
   end
   
   def new
+    # @picture = Picture.new
+  end
+  
+  def save
+    @picture = Picture.new
+    @picture.url = params[:url]
+    @picture.note = params[:note]
+    @picture.save
+    
+    redirect_to "/pictures"
     
   end
   
   
   def index
-    @pictures = all_pictures
-    @url = params[:url]
+     # @pictures = all_pictures
+     #     @url = params[:url]
+     @pictures = Picture.all
   end
   
   def show
-    pictures = all_pictures
+    @picture = Picture.find(params[:id])
+  end
+  
+  def delete
     
-    id = params[:id].to_i
+    @picture = Picture.find(params[:id])
+    @picture.destroy
     
-    @url = pictures[id][:url]
-    @note = pictures[id][:note]
+    redirect_to "/pictures"
   end
 end
 
