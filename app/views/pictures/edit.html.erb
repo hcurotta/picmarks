@@ -1,0 +1,13 @@
+<h1>Update Photo</h1>
+
+<img src="<%= @picture.url %>">
+
+<h2>Edit Picture</h2>
+
+<%= form_tag "/pictures/#{@picture.id}", :method => :put do %>
+  URL: <%= text_field_tag "url", @picture.url %>
+  <br/>
+  Note: <%= text_area_tag "note", @picture.note, :placeholder => "Sample Note" %>
+  <br/>
+  <%= submit_tag %>
+<% end %>>

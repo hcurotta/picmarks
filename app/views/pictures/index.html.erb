@@ -3,13 +3,14 @@
 		<div class = "span9">
 		<h1>List of Pictures</h1>
 		<table>
-			<tr>
+			
 			<%	@pictures.each do |picture| %>
+			<tr>
 			    <td>
 			      <a href="/pictures/<%= picture.id%>"><img width = 500 src="<%=picture.url%>"></a>
 			    </td>
-			<% end %>
 			</tr>
+			<% end %>
 		</table>
 		</div>
 		<div class = "span3">
